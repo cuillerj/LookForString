@@ -47,7 +47,7 @@ commandReturn LookForStr::GetCommand(String Srequest)
     String needle = *_PcommandList[cmdIdx];
 //	Serial.println(needle);
 //	Serial.println(needle.length());
-    if (Srequest.length() >= needle.length() ) {
+    if (Srequest.length() >= needle.length() && needle.length()!=0) {
       for (int posIdx = 0; (posIdx < Srequest.length() - needle.length() + 1); posIdx++) {
 //		  Serial.println(Srequest.substring(posIdx, needle.length() + posIdx));
         if (Srequest.substring(posIdx, needle.length() + posIdx) == needle) {
