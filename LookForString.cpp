@@ -22,13 +22,16 @@ int LookForStr::InitCommandsList (String *PcommandList[maxCommandNumber], int co
 	{
 		_commandNumber=commandNumber;
 //		Serial.print(_commandNumber);
+		int rc = 0;
 		for (int i=0;i<min(_commandNumber,maxCommandNumber);i++)
 		{
 			_PcommandList[i]=PcommandList[i];
+			rc++;
 //			Serial.print(*_PcommandList[i]);
 //			Serial.print(".");
 		}	
 //		Serial.println();
+		return(rc);
 	}
 
 int LookForStr::GetMaxCommandNumber() 
